@@ -14,10 +14,10 @@ const Weather = () => {
   // To fetch data as soon as the component loads
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const openWeatherapiKey = "8c60ed270f268e60a9679de0e23f9eba";
+      const apiKey = process.env.REACT_APP_API_KEY;
 
-      const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lahore&appid=${openWeatherapiKey}`;
-      const weatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Lahore&appid=${openWeatherapiKey}`;
+      const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lahore&appid=${apiKey}`;
+      const weatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Lahore&appid=${apiKey}`;
 
       try {
         const currentWeatherResponse = await fetch(currentWeatherUrl);
@@ -250,10 +250,10 @@ const Weather = () => {
 
   // To fetch updated weather data
   const fetchWeatherData = async () => {
-    const openWeatherapiKey = "8c60ed270f268e60a9679de0e23f9eba";
+    const apiKey = process.env.REACT_APP_API_KEY;
 
-    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${openWeatherapiKey}`;
-    const weatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${openWeatherapiKey}`;
+    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
+    const weatherForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
 
     try {
       const currentWeatherResponse = await fetch(currentWeatherUrl);

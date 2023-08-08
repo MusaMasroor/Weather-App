@@ -184,7 +184,9 @@ const WeatherItems = ({
                   return (
                     <div key={date}>
                       <div className="flex justify-between items-center">
-                        <h3 className="w-1/5">{getDayOfWeek(date)}</h3>
+                        <h3 className="w-1/5 font-bold">
+                          {getDayOfWeek(date)}
+                        </h3>
                         <span>{getWeatherIcon(minTemp)}</span>
                         <div className="relative left-5">
                           <span className="font-semibold text-lg w-1/4 sm:w-full">
@@ -256,12 +258,12 @@ const WeatherItems = ({
                             Visibility
                           </span>
                           <img
-                            className="w-[35%] "
+                            className="w-[36%] "
                             src="./img/visibility.svg"
                             alt="visibility"
                           />
                           <div className="flex items-center flex-wrap ">
-                            <span className="font-semibold text-lg sm:w-full ">
+                            <span className="font-semibold text-xl sm:w-full ">
                               {weatherData.visibility / 1000} km
                             </span>
                           </div>
@@ -272,9 +274,7 @@ const WeatherItems = ({
                     <div className="p-4 md:w-1/3">
                       <div className="h-full border-opacity-60 rounded-lg overflow-hidden card-bg-color">
                         <div className="p-6 space-y-2">
-                          <span className="font-semibold text-lg ">
-                            Feels Like
-                          </span>
+                          <span className="font-bold text-md ">Feels Like</span>
                           <img
                             className="w-[26%] "
                             src="./img/feels-like.svg"
@@ -295,12 +295,12 @@ const WeatherItems = ({
                         <div className="p-6 space-y-2">
                           <span className="font-semibold text-lg">Wind</span>
                           <img
-                            className="w-[35%] "
+                            className="w-[32%] "
                             src="./img/wind.svg"
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
-                            <span className="font-semibold text-lg sm:w-full ">
+                            <span className="font-bold text-md sm:w-full ">
                               {weatherData.wind.speed} km / h
                             </span>
                           </div>
@@ -320,7 +320,7 @@ const WeatherItems = ({
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
-                            <span className="font-semibold text-lg  sm:w-full ">
+                            <span className="font-semibold text-sm  sm:w-full ">
                               {convertUnixTimeToReadable(
                                 weatherData.sys.sunrise,
                                 weatherData.timezone
@@ -334,14 +334,14 @@ const WeatherItems = ({
                     <div className="p-4 md:w-1/3">
                       <div className="h-full border-opacity-60 rounded-lg overflow-hidden card-bg-color">
                         <div className="p-6 space-y-2">
-                          <span className="font-semibold tex">Sunset</span>
+                          <span className="font-semibold text-lg">Sunset</span>
                           <img
                             className="w-[35%] "
                             src="./img/sunset.svg"
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
-                            <span className="font-semibold tex sm:w-full ">
+                            <span className="font-semibold text-sm sm:w-full ">
                               {convertUnixTimeToReadable(
                                 weatherData.sys.sunset,
                                 weatherData.timezone
