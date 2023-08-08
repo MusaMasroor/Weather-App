@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MusaMasroor/React-Weather-App/static/css/main.7f5ab687.css",
+    "main.js": "/MusaMasroor/React-Weather-App/static/js/main.b2e8004e.js",
+    "index.html": "/MusaMasroor/React-Weather-App/index.html",
+    "main.7f5ab687.css.map": "/MusaMasroor/React-Weather-App/static/css/main.7f5ab687.css.map",
+    "main.b2e8004e.js.map": "/MusaMasroor/React-Weather-App/static/js/main.b2e8004e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f5ab687.css",
+    "static/js/main.b2e8004e.js"
+  ]
+}
