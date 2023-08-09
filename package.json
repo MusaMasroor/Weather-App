@@ -1,6 +1,6 @@
 {
   "name": "react-weather-app",
-  "homepage": "https://github.com/MusaMasroor/React-Weather-App",
+  "homepage": "https://MusaMasroor.github.io/React-Weather-App",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +45,6 @@
     "gh-pages": "^5.0.0",
     "postcss": "^8.4.24",
     "prefixer": "^0.0.3",
-    "serve": "^14.2.0",
     "tailwindcss": "^3.3.2"
   }
 }

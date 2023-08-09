@@ -5,7 +5,7 @@ const Preloader = () => {
     <div>
       <img
         className="w-[7rem] h-[7rem] items-center justify-center"
-        src="./img/storm.gif"
+        src={process.env.PUBLIC_URL + "/img/storm.gif"}
         alt="Preloader"
       />
     </div>

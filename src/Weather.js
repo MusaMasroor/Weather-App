@@ -72,21 +72,37 @@ const Weather = () => {
     const celsiusTemperature = temperature - 273.15; // Convert from Kelvin to Celsius
 
     if (celsiusTemperature > 25) {
-      return <img src="./img/sun.svg" alt="" />; // Clear Sky
+      return <img src={process.env.PUBLIC_URL + "/img/sun.svg"} alt="Sun" />; // Clear Sky
     } else if (celsiusTemperature >= 20 && celsiusTemperature <= 25) {
-      return <img src="./img/few-clouds.svg" alt="" />; // Few Clouds
+      return (
+        <img src={process.env.PUBLIC_URL + "/img/few-clouds.svg"} alt="Sun" />
+      ); // Few Clouds
     } else if (celsiusTemperature >= 15 && celsiusTemperature < 20) {
-      return <img src="./img/scattered-clouds.svg" alt="" />; // Scattered Clouds
+      return (
+        <img
+          src={process.env.PUBLIC_URL + "/img/scattered-clouds.svg"}
+          alt="Sun"
+        />
+      ); // Scattered Clouds
     } else if (celsiusTemperature >= 10 && celsiusTemperature < 15) {
-      return <img src="./img/broken-clouds.svg" alt="" />; // Broken Clouds
+      return (
+        <img
+          src={process.env.PUBLIC_URL + "/img/broken-clouds.svg"}
+          alt="Sun"
+        />
+      ); // Broken Clouds
     } else if (celsiusTemperature >= 5 && celsiusTemperature < 10) {
-      return <img src="./img/shower-rain.svg" alt="" />; // Shower Rain
+      return (
+        <img src={process.env.PUBLIC_URL + "/img/shower-rain.svg"} alt="Sun" />
+      ); // Shower Rain
     } else if (celsiusTemperature >= 0 && celsiusTemperature < 5) {
-      return <img src="./img/rain.svg" alt="" />; // Rain
+      return <img src={process.env.PUBLIC_URL + "/img/rain.svg"} alt="Sun" />; // Rain
     } else if (celsiusTemperature >= -10 && celsiusTemperature < 0) {
-      return <img src="./img/thunder.svg" alt="" />; // Thunderstorm
+      return (
+        <img src={process.env.PUBLIC_URL + "/img/thunder.svg"} alt="Sun" />
+      ); // Thunderstorm
     } else if (celsiusTemperature < -10) {
-      return <img src="./img/snowy.svg" alt="" />; // Snow
+      return <img src={process.env.PUBLIC_URL + "/img/snowy.svg"} alt="Sun" />; // Snow
     } else {
       return "🌫️"; // Mist
     }
@@ -109,7 +125,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/sunny.mp4"
+            src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
+            alt=""
             autoPlay
             loop
             muted
@@ -124,7 +141,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/cloudy.mp4"
+            src={process.env.PUBLIC_URL + "/img/cloudy.mp4"}
+            alt=""
             autoPlay
             loop
             muted
@@ -139,7 +157,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/rainy.mp4"
+            src={process.env.PUBLIC_URL + "/img/rainy.mp4"}
+            alt=""
             autoPlay
             loop
             muted
@@ -154,7 +173,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/thunderstorm.mp4"
+            src={process.env.PUBLIC_URL + "/img/thunderstorm.mp4"}
+            alt=""
             autoPlay
             loop
             muted
@@ -169,7 +189,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/snowy.mp4"
+            src={process.env.PUBLIC_URL + "/img/snowy.mp4"}
+            alt=""
             autoPlay
             loop
             muted
@@ -184,7 +205,8 @@ const Weather = () => {
         <LazyLoad>
           <video
             className="video-background"
-            src="./img/sunny.mp4"
+            src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
+            alt=""
             autoPlay
             loop
             muted

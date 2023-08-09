@@ -219,7 +219,7 @@ const WeatherItems = ({
                           </span>
                           <img
                             className="w-[30%]"
-                            src="./img/humidity.svg"
+                            src={process.env.PUBLIC_URL + "/img/humidity.svg"}
                             alt="humidity"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -239,7 +239,7 @@ const WeatherItems = ({
                           </span>
                           <img
                             className="w-[32%]"
-                            src="./img/pressure.svg"
+                            src={process.env.PUBLIC_URL + "/img/pressure.svg"}
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -259,7 +259,7 @@ const WeatherItems = ({
                           </span>
                           <img
                             className="w-[36%] "
-                            src="./img/visibility.svg"
+                            src={process.env.PUBLIC_URL + "/img/visibility.svg"}
                             alt="visibility"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -277,7 +277,7 @@ const WeatherItems = ({
                           <span className="font-bold text-md ">Feels Like</span>
                           <img
                             className="w-[26%] "
-                            src="./img/feels-like.svg"
+                            src={process.env.PUBLIC_URL + "/img/feels-like.svg"}
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -296,7 +296,7 @@ const WeatherItems = ({
                           <span className="font-semibold text-lg">Wind</span>
                           <img
                             className="w-[32%] "
-                            src="./img/wind.svg"
+                            src={process.env.PUBLIC_URL + "/img/wind.svg"}
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -316,7 +316,7 @@ const WeatherItems = ({
                           </span>
                           <img
                             className="w-[35%] "
-                            src="./img/sunrise.svg"
+                            src={process.env.PUBLIC_URL + "/img/sunrise.svg"}
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
@@ -337,7 +337,7 @@ const WeatherItems = ({
                           <span className="font-semibold text-lg">Sunset</span>
                           <img
                             className="w-[35%] "
-                            src="./img/sunset.svg"
+                            src={process.env.PUBLIC_URL + "/img/sunset.svg"}
                             alt="pressure"
                           />
                           <div className="flex items-center flex-wrap ">
