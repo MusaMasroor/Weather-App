@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./custom.css";
 import WeatherItems from "./WeatherItems.jsx";
+import AutoPlaySilentVideo from "./AutoPlaySilentVideo.jsx";
 import LazyLoad from "react-lazy-load";
 const Weather = () => {
   // All The States
@@ -49,23 +50,23 @@ const Weather = () => {
   }, []);
 
   // Function to pause video upon switching tabs
-  const videoRef = useRef(null);
+  // const videoRef = useRef(null);
 
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "hidden") {
-        videoRef.current.pause(); // Pause the video when the page becomes hidden
-      } else if (document.visibilityState === "visible") {
-        videoRef.current.play(); // Resume video playback when the page becomes visible
-      }
-    };
+  // useEffect(() => {
+  //   const handleVisibilityChange = () => {
+  //     if (document.visibilityState === "hidden") {
+  //       videoRef.current.pause(); // Pause the video when the page becomes hidden
+  //     } else if (document.visibilityState === "visible") {
+  //       videoRef.current.play(); // Resume video playback when the page becomes visible
+  //     }
+  //   };
 
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+  //   document.addEventListener("visibilitychange", handleVisibilityChange);
 
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
+  //   };
+  // }, []);
 
   // Show icons on specific temperatures
   const getWeatherIcon = (temperature) => {
@@ -110,133 +111,41 @@ const Weather = () => {
 
   // Function to play the backgound video smoothly
 
-  const handleVideoTimeUpdate = () => {
-    const video = videoRef.current;
-    if (video.duration - video.currentTime <= 0.7) {
-      video.currentTime = 0;
-      video.play();
-    }
-  };
+  // const handleVideoTimeUpdate = () => {
+  //   const video = videoRef.current;
+  //   if (video.duration - video.currentTime <= 0.7) {
+  //     video.currentTime = 0;
+  //     video.play();
+  //   }
+  // };
 
   // Show backgound videos according to the fetched API data
   const getWeatherVideo = (weather) => {
-    if (weather.includes("Clear")) {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    } else if (weather.includes("Clouds")) {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/cloudy.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    } else if (weather.includes("Rain")) {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/rainy.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    } else if (weather.includes("Thunderstorm")) {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/thunderstorm.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    } else if (weather.includes("Snow")) {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/snowy.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    } else {
-      return (
-        <LazyLoad>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `<video
-            className="video-background"
-            src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
-            alt=""
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onTimeUpdate={handleVideoTimeUpdate}
-            ref={videoRef}
-          />`,
-          }}
-        </LazyLoad>
-      );
-    }
-  };
+    let videoSrc;
 
+    if (weather.includes("Clear")) {
+      videoSrc = "/img/sunny.mp4";
+    } else if (weather.includes("Clouds")) {
+      videoSrc = "/img/cloudy.mp4";
+    } else if (weather.includes("Rain")) {
+      videoSrc = "/img/rainy.mp4";
+    } else if (weather.includes("Thunderstorm")) {
+      videoSrc = "/img/thunderstorm.mp4";
+    } else if (weather.includes("Snow")) {
+      videoSrc = "/img/snowy.mp4";
+    } else {
+      videoSrc = "/img/sunny.mp4"; // Default video
+    }
+
+    return (
+      <LazyLoad>
+        <AutoPlaySilentVideo
+          className="video-background"
+          video={process.env.PUBLIC_URL + videoSrc}
+        />
+      </LazyLoad>
+    );
+  };
   // Function to get sunset, sunrise values in a readable form
   const convertUnixTimeToReadable = (unixTimestamp, timeZoneOffsetSeconds) => {
     const date = new Date((unixTimestamp + timeZoneOffsetSeconds) * 1000);
