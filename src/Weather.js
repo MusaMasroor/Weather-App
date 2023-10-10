@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./custom.css";
 import WeatherItems from "./WeatherItems.jsx";
 import AutoPlaySilentVideo from "./AutoPlaySilentVideo.jsx";
-import LazyLoad from "react-lazy-load";
+
 const Weather = () => {
   // All The States
   const [location, setLocationChange] = useState("");
@@ -138,12 +138,10 @@ const Weather = () => {
     }
 
     return (
-      <LazyLoad>
-        <AutoPlaySilentVideo
-          className="video-background"
-          video={process.env.PUBLIC_URL + videoSrc}
-        />
-      </LazyLoad>
+      <AutoPlaySilentVideo
+        className="video-background"
+        video={process.env.PUBLIC_URL + videoSrc}
+      />
     );
   };
   // Function to get sunset, sunrise values in a readable form
