@@ -123,7 +123,9 @@ const Weather = () => {
     if (weather.includes("Clear")) {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
             alt=""
@@ -133,13 +135,16 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     } else if (weather.includes("Clouds")) {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/cloudy.mp4"}
             alt=""
@@ -149,13 +154,16 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     } else if (weather.includes("Rain")) {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/rainy.mp4"}
             alt=""
@@ -165,13 +173,16 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     } else if (weather.includes("Thunderstorm")) {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/thunderstorm.mp4"}
             alt=""
@@ -181,13 +192,16 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     } else if (weather.includes("Snow")) {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/snowy.mp4"}
             alt=""
@@ -197,13 +211,16 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     } else {
       return (
         <LazyLoad>
-          <video
+          dangerouslySetInnerHTML=
+          {{
+            __html: `<video
             className="video-background"
             src={process.env.PUBLIC_URL + "/img/sunny.mp4"}
             alt=""
@@ -213,7 +230,8 @@ const Weather = () => {
             preload="auto"
             onTimeUpdate={handleVideoTimeUpdate}
             ref={videoRef}
-          />
+          />`,
+          }}
         </LazyLoad>
       );
     }
