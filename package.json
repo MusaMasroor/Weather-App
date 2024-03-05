@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "auto": "^10.46.0",
-    "gh-pages": "^5.0.0",
     "postcss": "^8.4.24",
     "prefixer": "^0.0.3",
     "tailwindcss": "^3.3.2"
