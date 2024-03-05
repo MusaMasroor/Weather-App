@@ -1,6 +1,5 @@
 {
   "name": "react-weather-app",
-  "homepage": "https://MusaMasroor.github.io/Weather-App",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
